@@ -12,7 +12,10 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            Text("wefw")
+            Text("macarronada")
+            Text("macarronada")
+            Text("macarronada")
+            Text("macarronada")
         }
         
     }
