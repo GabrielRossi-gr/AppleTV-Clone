@@ -11,6 +11,8 @@ import CoreData
 struct ContentView: View {
     
     var body: some View {
+        
+        
         VStack{
             Text("macarronada")
             Text("macarronada")
@@ -18,6 +20,13 @@ struct ContentView: View {
             Text("macarronada")
         }
         
+        
+        
+        
+        HStack{
+            
+            Text("ejfwe")
+        }
     }
     
 }
