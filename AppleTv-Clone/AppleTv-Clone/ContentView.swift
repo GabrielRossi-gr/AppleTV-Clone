@@ -12,6 +12,18 @@ struct ContentView: View {
     
     var body: some View {
         
+        NavigationView{
+            VStack {
+                Form {
+                    List {
+                        Text("A")
+                        Text("A")
+                        Text("A")
+                        Text("A")
+                    }
+                }
+            }.navigationTitle(Text("A"))
+        }
         
         VStack{
             Text("macarronada")
