@@ -3,12 +3,13 @@ import SwiftUI
 struct MovieCollectionView: View {
     @ObservedObject var moviesViewModel: MovieViewModel
     @ObservedObject var seriesViewModel: SeriesViewModel
-    
     var pageTittle: String = "CollectionViews"
     
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
+                
+                
                 VStack (alignment: .leading) {
                     Text("Movies")
                         .font(.title)
@@ -17,7 +18,7 @@ struct MovieCollectionView: View {
                         .padding(.leading, 16)
                     
                     ScrollView(.horizontal) {
-                        LazyHStack(spacing: 16) {
+                        LazyHStack(spacing: 16){
                             ForEach(moviesViewModel.movies) { movie in
                                 VStack {
                                     Image(movie.imageName)
@@ -38,6 +39,11 @@ struct MovieCollectionView: View {
                         moviesViewModel.fetchMovies()
                     }
                 }
+                
+                
+                
+                
+                
                 
                 VStack (alignment: .leading) {
                     Text("Series")

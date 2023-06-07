@@ -9,39 +9,41 @@ import SwiftUI
 
 struct HorizontalScrollView: View {
     
-    //titulo navigation view
-    @State
-    var detailTitle = "Titulo"
     
+//    @StateObject private var dataSection = DataSection(subtitle: "subtitle", backGroundMovie: "m0")
+    
+    @ObservedObject datasection: DataSection
+
     //quantidade de filmes na scrollView hotrizontal
-    @State
     var sizeFilmes = 10
-    
-    //titulo da subtitle
-    @State
-    var subTitleView = "SubTitle"
-    
+
+    var filmes = ["filme0", "filme1", "filme2", "filme3"]
     
     var body: some View {
+    
         
-      
-        VStack(alignment: .leading,.){
-                Text("\(subTitleView)").frame(alignment: .leading)
-                ScrollView(.horizontal){
-                    HStack{
-                        ForEach (1...sizeFilmes, id: \.self){ index in
+    
+        
+        VStack(alignment: .leading){
+            Text("\(datasection.subtitle)").padding()
+            ScrollView(.horizontal){
+                LazyHGrid(rows: [GridItem(.fixed(100))]) {
+                    ForEach(filmes, id: \.self) { item in
+                        Text(item)
+                            .frame(width: 230, height: 150)
+                            .background(Color.blue)
+                            .cornerRadius(10)
                             
-                            RoundedRectangle(cornerRadius: 10)
-                                .frame(width: 200, height: 200)
-                                .padding(.horizontal, 4)
-                        }
                     }
-                    
                 }
-            }//final VStack
-        //.frame(alignment: .topLeading)
+            }.padding(.leading)
+        }
+        
+        
+       }
+            
     }
-}
+
 
 struct HorizontalScrollView_Previews: PreviewProvider {
     static var previews: some View {
