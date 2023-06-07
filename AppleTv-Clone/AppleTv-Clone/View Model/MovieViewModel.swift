@@ -13,12 +13,12 @@ class MovieViewModel: ObservableObject {
     // aqui eu faco a requisicao na API
     func fetchMovies() {
         movies = [
-                Movie(id: 0, title: "MovieSample0", imageName: "m0"),
-                Movie(id: 1, title: "MovieSample1", imageName: "m1"),
-                Movie(id: 2, title: "MovieSample2", imageName: "m2"),
-                Movie(id: 3, title: "MovieSample3", imageName: "m3"),
-                Movie(id: 4, title: "MovieSample4", imageName: "m4"),
-                Movie(id: 5, title: "MovieSample5", imageName: "m5")
+                Movie(id: 0, title: "Swat", imageName: "m0", genre: ["Ação", "Tiro", "Policial"]),
+                Movie(id: 1, title: "2012", imageName: "m1", genre: ["Ficção Cientifica", "Aventura", "Catastrofes"]),
+                Movie(id: 2, title: "Blasted", imageName: "m2", genre: ["Samba Canção", "Verticalismo", "Policial"]),
+                Movie(id: 3, title: "Den of Thieves", imageName: "m3", genre: ["Ação", "Tiro", "Policial"]),
+                Movie(id: 4, title: "Nobody Knows Me", imageName: "m4", genre: ["Ação", "Terror", "Aventura"]),
+                Movie(id: 5, title: "Sentinelle", imageName: "m5", genre: ["Ação", "Tiro", "Policial"])
             ]
         
 //        guard let url = URL(string: "YOUR_API_URL_HERE") else { return }

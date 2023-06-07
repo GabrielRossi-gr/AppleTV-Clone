@@ -7,10 +7,20 @@ struct MovieCollectionView: View {
     var pageTittle: String = "CollectionViews"
     
     var body: some View {
+        
         NavigationView {
             ScrollView(.vertical) {
+                
+                Image("s0")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: .infinity, height: 600)
+                    .clipped()
+                    
                 VStack (alignment: .leading) {
-                    Text("Movies")
+                    
+                    /// Movies
+                    Text("Mais Populares")
                         .font(.title)
                         .fontWeight(.bold)
                         .padding(.top, 16)
@@ -19,16 +29,23 @@ struct MovieCollectionView: View {
                     ScrollView(.horizontal) {
                         LazyHStack(spacing: 16) {
                             ForEach(moviesViewModel.movies) { movie in
-                                VStack {
+                                VStack (alignment: .leading){
                                     Image(movie.imageName)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 108, height: 152)
+                                        .frame(width: 200, height: 100)
                                         .cornerRadius(10)
                                     //                                        .padding(.vertical, 8)
                                     //                                        .padding(.horizontal, 4)
                                         .background(Color.gray.opacity(0.4))
                                         .cornerRadius(10)
+                                    
+                                    Text(movie.title)
+                                        .font(.body)
+                                    
+                                    Text(movie.genre[0])
+                                        .font(.body)
+                                        .foregroundColor(.gray)
                                 }
                             }
                         }
@@ -37,9 +54,8 @@ struct MovieCollectionView: View {
                     .onAppear {
                         moviesViewModel.fetchMovies()
                     }
-                }
-                
-                VStack (alignment: .leading) {
+                    
+                    /// Series
                     Text("Series")
                         .font(.title)
                         .fontWeight(.bold)
@@ -53,7 +69,7 @@ struct MovieCollectionView: View {
                                     Image(series.imageName)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 108, height: 152)
+                                        .frame(width: 200, height: 100)
                                         .cornerRadius(10)
                                     //                                        .padding(.vertical, 8)
                                     //                                        .padding(.horizontal, 4)
@@ -67,9 +83,8 @@ struct MovieCollectionView: View {
                     .onAppear {
                         seriesViewModel.fetchSeries()
                     }
-                }
-                
-                VStack (alignment: .leading) {
+                    
+                    /// All horizontal
                     Text("All")
                         .font(.title)
                         .fontWeight(.bold)
@@ -83,7 +98,7 @@ struct MovieCollectionView: View {
                                     Image(imageName)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 108, height: 152)
+                                        .frame(width: 200, height: 100)
                                         .cornerRadius(10)
                                         .background(Color.gray.opacity(0.4))
                                         .cornerRadius(10)
@@ -96,9 +111,9 @@ struct MovieCollectionView: View {
                         moviesViewModel.fetchMovies()
                         seriesViewModel.fetchSeries()
                     }
-                }
-                
-                VStack (alignment: .leading) {
+                    
+                    
+                    // All vertical
                     Text("All")
                         .font(.title)
                         .fontWeight(.bold)
@@ -125,9 +140,11 @@ struct MovieCollectionView: View {
                         moviesViewModel.fetchMovies()
                         seriesViewModel.fetchSeries()
                     }
+                    
                 }
             }
             .navigationTitle(Text("\(pageTittle)"))
+            .edgesIgnoringSafeArea(.top)
         }
     }
     
@@ -135,6 +152,7 @@ struct MovieCollectionView: View {
         let movies = moviesViewModel.movies.map { $0.imageName }
         let series = seriesViewModel.series.map { $0.imageName }
         let combined = movies + series
+        print(combined)
         return combined.shuffled()
     }
     
