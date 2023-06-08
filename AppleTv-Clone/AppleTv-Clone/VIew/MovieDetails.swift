@@ -15,8 +15,9 @@ struct MovieDetails: View {
     var body: some View {
         
         ZStack{
-            Image("m3")
+        
             //Image("\(datamodel.bacgroungImage)")
+                Image("m3")
                 .resizable()
                 .frame(width: .infinity , height: 800, alignment: .top)
                 .offset(x: -0, y:-35)
@@ -39,7 +40,7 @@ struct MovieDetails: View {
                         VStack{
                             Text("NOVOS EPISODEOS ÀS SEXTAS")
                                 .foregroundColor(.white)
-                                Text("TITULO")
+                                Text("TITULO").font(.system(size: 90))
                             //Text("\(datamodel.titulo)").font(.system(size: 90))
                                 .foregroundColor(.white)
                                 .bold()
