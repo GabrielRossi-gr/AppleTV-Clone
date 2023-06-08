@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MovieCollectionView: View {
+    @ObservedObject var datamodel = DataModel()
+    
     @ObservedObject var moviesViewModel: MovieViewModel
     @ObservedObject var seriesViewModel: SeriesViewModel
     
@@ -8,15 +10,19 @@ struct MovieCollectionView: View {
     
     var body: some View {
         
+//        MovieDetails(datamodel: datamodel)
+        
+        
         NavigationView {
             ScrollView(.vertical) {
                 
+
                 Image("s0")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: .infinity, height: 600)
                     .clipped()
-                    
+
                 VStack (alignment: .leading) {
                     
                     /// Movies
@@ -27,7 +33,7 @@ struct MovieCollectionView: View {
                         .padding(.leading, 16)
                     
                     ScrollView(.horizontal) {
-                        LazyHStack(spacing: 16) {
+                        LazyHStack(spacing: 16){
                             ForEach(moviesViewModel.movies) { movie in
                                 VStack (alignment: .leading){
                                     Image(movie.imageName)
@@ -56,6 +62,14 @@ struct MovieCollectionView: View {
                     }
                     
                     /// Series
+                }
+                
+                
+                
+                
+                
+                
+                VStack (alignment: .leading) {
                     Text("Series")
                         .font(.title)
                         .fontWeight(.bold)
