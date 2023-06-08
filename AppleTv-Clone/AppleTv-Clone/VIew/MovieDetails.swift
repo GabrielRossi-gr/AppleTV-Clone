@@ -42,7 +42,7 @@ struct MovieDetails: View {
                 
                         
                         VStack{
-                            Text("NOVOS EPISODEOS AS SEXTAS")
+                            Text("NOVOS EPISODEOS ÀS SEXTAS")
                                 .foregroundColor(.white)
                             Text("TITULO").font(.system(size: 90))
                                 .foregroundColor(.white)
@@ -105,6 +105,7 @@ struct MovieDetails: View {
 //card container
                         VStack(alignment: .leading){
                             Text("Temporada 1")
+                                .foregroundColor(.white)
                                 .font(.title).bold()
                                 .padding(.top, 10)
                             ScrollView(.horizontal, showsIndicators: false){
@@ -115,7 +116,9 @@ struct MovieDetails: View {
                                                 
                                                 //description card
                                                 Text("Episódio X")
+                                                    .foregroundColor(.white)
                                                 Text("The Beatles foi uma banda musical britanica de rock, formada na cidade de Liverpool em 1960.")
+                                                    .foregroundColor(.white)
                                                 
                                                 
                                             }.frame(width: 230 , height: 260, alignment: .top)
@@ -125,8 +128,8 @@ struct MovieDetails: View {
             
                         }.padding(.leading)
                         .padding(.bottom, 40)
-                            .background(.white)
-                            .colorInvert()
+                            .background(.black)
+                            
         
                     
                     
