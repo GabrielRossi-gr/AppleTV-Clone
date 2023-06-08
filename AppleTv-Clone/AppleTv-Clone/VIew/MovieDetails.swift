@@ -15,7 +15,7 @@ struct MovieDetails: View {
     var body: some View {
         
         ZStack{
-                Image("m3")
+            Image("m3")
             //Image("\(datamodel.bacgroungImage)")
                 .resizable()
                 .frame(width: .infinity , height: 800, alignment: .top)
