@@ -142,6 +142,19 @@ struct MovieDetails: View {
                                     .resizable()
                                     .cornerRadius(15)
                                 
+                                // gradiente
+                                Rectangle()
+                                        .fill(
+                                            LinearGradient(
+                                                gradient: Gradient(colors: [Color.clear, Color.black.opacity(1)]),
+                                                startPoint: .center,
+                                                endPoint: .bottom
+                                            )
+                                        )
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.white, lineWidth: 0.2)
+                                
+                                
                                 VStack(alignment: .leading){
                                     Spacer()
                                         Text("Titulo")
@@ -150,22 +163,36 @@ struct MovieDetails: View {
                                             .padding(.leading)
                                         
                                         Text("Assista Agora no AppleTV+")
+                                        .padding(.bottom, 10)
                                             .foregroundColor(.white)
                                             .padding(.leading)
+                                        
                                 }
                             }//final large card
                             .frame(width: 373, height: 500, alignment: .top)
                             
                             
                             
-                            //relacionados
-//
-//                            VStack{
-//                                Text("Relacionados")
-//                                    .font(.title)
-//                                    .foregroundColor(.white)
-//                                    .padding(.leading)
-//                            }
+                            
+//relacionados
+                            VStack(alignment: .leading){
+                                Text("Relacionados")
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    .padding(.leading)
+                                ScrollView(.horizontal){
+                                    HStack{
+                                        ForEach(0..<6){i in
+                                            Image("m\(i)")
+                                                .resizable()
+                                                .frame(width: 170, height: 110)
+                                        }
+                                    }.padding(.leading)
+                                }
+                                
+                                
+                                
+                            }
                             
                             
                             
@@ -178,7 +205,7 @@ struct MovieDetails: View {
                             .background(.black)
 
                 }//all scroll container
-                //.padding(.top, 220)
+                .padding(.top, 220)
             }
             
             
