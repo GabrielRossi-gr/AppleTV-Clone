@@ -4,11 +4,10 @@
 //
 //  Created by Gabriel Rossi on 07/06/23.
 //
-
 import SwiftUI
 
 struct MovieDetails: View {
-    @ObservedObject var seriesView: SeriesViewModel
+    //@ObservedObject var seriesView: SeriesViewModel
     var body: some View {
         
         ZStack{
@@ -94,7 +93,6 @@ struct MovieDetails: View {
 //botton container
                         VStack(alignment: .leading){
                             
-                            
                             Text("Temporada 1")
                                 .foregroundColor(.white)
                                 .font(.title).bold()
@@ -103,7 +101,10 @@ struct MovieDetails: View {
                                     HStack{
                                         ForEach(0..<6){i in
                                             VStack(alignment: .leading){
-                                                CardView(img: "m3")
+                                                Image("m3")
+                                                    .resizable()
+                                                    .frame(width: 230 , height: 140)
+//                                                CardView(img: "m3")
                                                 //CardView(img: "m\(i)")
                                                 
                                                 //description card
@@ -206,20 +207,20 @@ struct MovieDetails: View {
 
 struct MovieDetails_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetails(seriesView: SeriesViewModel())
+        MovieDetails()
     }
 }
 
 
-struct CardView: View{
-    var img = ""
-    var x = 0
-    
-    
-    var body: some View{
-        VStack{
-            Image(img)
-                .resizable().frame(width: 230 , height: 140)
-        }
-    }
-}
+//struct CardView: View{
+//    var img = ""
+//    var x = 0
+//
+//
+//    var body: some View{
+//        VStack{
+//            Image(img)
+//                .resizable().frame(width: 230 , height: 140)
+//        }
+//    }
+//}
