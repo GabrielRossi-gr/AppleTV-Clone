@@ -3,51 +3,86 @@ import SwiftUI
 struct MovieCollectionView: View {
     @ObservedObject var moviesViewModel: MovieViewModel
     @ObservedObject var seriesViewModel: SeriesViewModel
+<<<<<<< HEAD
+=======
+    @State var pageTitle = "Assistir Agora"
+
+    @State var sections = ["Mais Populares", "Series", "All Horizontal", "All Vertical"]
+>>>>>>> HomeView
     var pageTittle: String = "CollectionViews"
-    
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
+<<<<<<< HEAD
                 
                 
+=======
+                HomePosterView(moviesViewModel: moviesViewModel, seriesViewModel: seriesViewModel)
+                
+                // Section 1
+>>>>>>> HomeView
                 VStack (alignment: .leading) {
-                    Text("Movies")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.top, 16)
-                        .padding(.leading, 16)
+                    HStack {
+                        Text("\(sections[0])")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.top, 16)
+                            .padding(.leading, 16)
+                        
+                        NavigationLink(destination: ContentView()) {
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.gray)
+                                .padding(.top, 16)
+                                .font(.title)
+                        }
+                    }
                     
                     ScrollView(.horizontal) {
                         LazyHStack(spacing: 16){
                             ForEach(moviesViewModel.movies) { movie in
-                                VStack {
+                                VStack (alignment: .leading){
                                     Image(movie.imageName)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 108, height: 152)
+                                        .frame(width: 200, height: 100)
                                         .cornerRadius(10)
-                                    //                                        .padding(.vertical, 8)
-                                    //                                        .padding(.horizontal, 4)
                                         .background(Color.gray.opacity(0.4))
                                         .cornerRadius(10)
+                                    
+                                    Text(movie.title)
+                                        .font(.body)
+                                    
+                                    Text(movie.genre[0])
+                                        .font(.body)
+                                        .foregroundColor(.gray)
                                 }
                             }
                         }
                         .padding(.horizontal, 16)
                     }
-                    .onAppear {
-                        moviesViewModel.fetchMovies()
-                    }
                 }
                 
+<<<<<<< HEAD
  
+=======
+                // Section 2
+>>>>>>> HomeView
                 VStack (alignment: .leading) {
-                    Text("Series")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.top, 16)
-                        .padding(.leading, 16)
-                    
+                    HStack {
+                        Text("\(sections[1])")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.top, 16)
+                            .padding(.leading, 16)
+                        
+                        NavigationLink(destination: ContentView()) {
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.gray)
+                                .padding(.top, 16)
+                                .font(.title)
+                        }
+                    }
+            
                     ScrollView(.horizontal) {
                         LazyHStack(spacing: 16) {
                             ForEach(seriesViewModel.series) { series in
@@ -55,10 +90,9 @@ struct MovieCollectionView: View {
                                     Image(series.imageName)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 108, height: 152)
+                                        .frame(width: 200, height: 100)
                                         .cornerRadius(10)
-                                    //                                        .padding(.vertical, 8)
-                                    //                                        .padding(.horizontal, 4)
+                                        .padding(.horizontal, 4)
                                         .background(Color.gray.opacity(0.4))
                                         .cornerRadius(10)
                                 }
@@ -66,17 +100,24 @@ struct MovieCollectionView: View {
                         }
                         .padding(.horizontal, 16)
                     }
-                    .onAppear {
-                        seriesViewModel.fetchSeries()
-                    }
                 }
                 
+                // Section 3
                 VStack (alignment: .leading) {
-                    Text("All")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.top, 16)
-                        .padding(.leading, 16)
+                    HStack {
+                        Text("\(sections[2])")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.top, 16)
+                            .padding(.leading, 16)
+                        
+                        NavigationLink(destination: ContentView()) {
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.gray)
+                                .padding(.top, 16)
+                                .font(.title)
+                        }
+                    }
                     
                     ScrollView(.horizontal) {
                         LazyHStack(spacing: 16) {
@@ -85,7 +126,7 @@ struct MovieCollectionView: View {
                                     Image(imageName)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 108, height: 152)
+                                        .frame(width: 260, height: 140)
                                         .cornerRadius(10)
                                         .background(Color.gray.opacity(0.4))
                                         .cornerRadius(10)
@@ -94,18 +135,24 @@ struct MovieCollectionView: View {
                         }
                         .padding(.horizontal, 16)
                     }
-                    .onAppear {
-                        moviesViewModel.fetchMovies()
-                        seriesViewModel.fetchSeries()
-                    }
                 }
                 
+                // Section 4
                 VStack (alignment: .leading) {
-                    Text("All")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.top, 16)
-                        .padding(.leading, 16)
+                    HStack {
+                        Text("\(sections[3])")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.top, 16)
+                            .padding(.leading, 16)
+                        
+                        NavigationLink(destination: ContentView()) {
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.gray)
+                                .padding(.top, 16)
+                                .font(.title)
+                        }
+                    }
                     
                     ScrollView(.vertical) {
                         LazyVGrid(columns: gridLayout, spacing: 16) {
@@ -123,13 +170,16 @@ struct MovieCollectionView: View {
                         }
                         .padding(.horizontal, 16)
                     }
-                    .onAppear {
-                        moviesViewModel.fetchMovies()
-                        seriesViewModel.fetchSeries()
-                    }
-                }
+                }.padding(.leading, 8)
+                
+                
             }
-            .navigationTitle(Text("\(pageTittle)"))
+            .onAppear {
+                moviesViewModel.fetchMovies()
+                seriesViewModel.fetchSeries()
+            }
+            .ignoresSafeArea()
+            .navigationBarTitle(pageTitle)
         }
     }
     
@@ -137,6 +187,7 @@ struct MovieCollectionView: View {
         let movies = moviesViewModel.movies.map { $0.imageName }
         let series = seriesViewModel.series.map { $0.imageName }
         let combined = movies + series
+        print(combined)
         return combined.shuffled()
     }
     
@@ -151,12 +202,4 @@ struct MovieCollectionView: View {
         GridItem(.flexible(), spacing: 16),
         GridItem(.flexible(), spacing: 16)
     ]
-}
-
-struct MovieCollectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        let moviesViewModel = MovieViewModel()
-        let seriesViewModel = SeriesViewModel()
-        MovieCollectionView(moviesViewModel: moviesViewModel, seriesViewModel: seriesViewModel)
-    }
 }

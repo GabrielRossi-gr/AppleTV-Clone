@@ -11,4 +11,8 @@ struct Movie: Identifiable {
     let id: Int
     let title: String
     let imageName: String
+    let genre: [String]
+    let duration: String
+    let ageRating: String
+    let description: String
 }

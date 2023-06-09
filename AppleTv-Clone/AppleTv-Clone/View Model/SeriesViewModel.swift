@@ -13,12 +13,12 @@ class SeriesViewModel: ObservableObject {
     // aqui eu faco a requisicao na API
     func fetchSeries() {
         series = [
-                Series(id: 0, title: "SerieSample0", imageName: "s0"),
-                Series(id: 1, title: "SerieSample1", imageName: "s1"),
-                Series(id: 2, title: "SerieSample2", imageName: "s2"),
-                Series(id: 3, title: "SerieSample3", imageName: "s3"),
-                Series(id: 4, title: "SerieSample4", imageName: "s4"),
-                Series(id: 5, title: "SerieSample5", imageName: "s5")
+                Series(id: 0, title: "SerieSample0", imageName: "s0", genre: ["Policial", "Crime"]),
+                Series(id: 1, title: "SerieSample1", imageName: "s1", genre: ["Romance", "Viagem"]),
+                Series(id: 2, title: "SerieSample2", imageName: "s2", genre: ["Comida", "Mastercheff"]),
+                Series(id: 3, title: "SerieSample3", imageName: "s3", genre: ["Policial", "Crime"]),
+                Series(id: 4, title: "SerieSample4", imageName: "s4", genre: ["Medicos", "Doutores"]),
+                Series(id: 5, title: "SerieSample5", imageName: "s5", genre: ["Aventura", "Ficção Cientifica"])
             ]
         
 //        guard let url = URL(string: "YOUR_API_URL_HERE") else { return }
