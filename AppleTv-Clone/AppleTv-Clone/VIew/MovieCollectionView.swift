@@ -55,6 +55,7 @@ struct MovieCollectionView: View {
                     }
                 }
                 
+
                 // Section 2
                 VStack (alignment: .leading) {
                     HStack {
