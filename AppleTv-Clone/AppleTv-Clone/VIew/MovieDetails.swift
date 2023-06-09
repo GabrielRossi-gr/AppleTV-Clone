@@ -16,8 +16,8 @@ struct MovieDetails: View {
         
         ZStack{
         
-            //Image("\(datamodel.bacgroungImage)")
-                Image("m3")
+            Image("\(datamodel.backGroundImage)")
+            //    Image("m3")
                 .resizable()
                 .frame(width: .infinity , height: 800, alignment: .top)
                 .offset(x: -0, y:-35)

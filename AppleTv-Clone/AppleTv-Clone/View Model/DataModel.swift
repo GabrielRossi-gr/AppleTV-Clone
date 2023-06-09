@@ -11,8 +11,10 @@ import SwiftUI
 public class DataModel: ObservableObject{
     
     @Published var titulo = ""
+    @Published var backGroundImage = ""
     
-    init(titulo: String = "") {
+    init(titulo: String = "", backGroundImage: String = "") {
         self.titulo = titulo
+        self.backGroundImage = backGroundImage
     }
 }
