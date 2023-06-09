@@ -12,10 +12,7 @@ struct AppleTv_CloneApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().ignoresSafeArea()
+            MovieDetails()
         }
-        
-        
-        
     }
 }
