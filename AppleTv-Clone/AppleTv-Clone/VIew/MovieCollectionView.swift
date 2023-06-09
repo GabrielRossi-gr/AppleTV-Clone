@@ -12,6 +12,7 @@ struct MovieCollectionView: View {
             ScrollView(.vertical) {
                 HomePosterView(moviesViewModel: moviesViewModel, seriesViewModel: seriesViewModel)
                 
+                //>>>
                 // Section 1
                 VStack (alignment: .leading) {
                     HStack {
