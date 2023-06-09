@@ -11,5 +11,9 @@ struct Series: Identifiable {
     let id: Int
     let title: String
     let imageName: String
+<<<<<<< HEAD
     
+=======
+    let genre: [String]
+>>>>>>> HomeView
 }
