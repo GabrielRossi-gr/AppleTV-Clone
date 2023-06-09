@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieDetails: View {
-    @ObservedObject var seriesView: SeriesViewModel
+    //@ObservedObject var seriesView: Seri
     var body: some View {
         
         ZStack{
@@ -57,7 +57,7 @@ struct MovieDetails: View {
                                 .cornerRadius(10)
                                 
                             })
-                            
+                 
 //button 2
                             Button(action: {
                                 // Ação a ser executada quando o botão for pressionado
@@ -71,7 +71,6 @@ struct MovieDetails: View {
                                     .padding().frame(width: 300 , height: 53)
                                     .background(Color.white)
                                     .cornerRadius(8)
-                                
                             })
                             
 //propaganda
@@ -83,49 +82,42 @@ struct MovieDetails: View {
                             Text("The Beatles foi uma banda musical britânica de rock, formada na cidade de Liverpool em 1960. Com os integrantes John Lennon.")
                                 .foregroundColor(.white)
                                 .font(.headline)
-                            
-//final container top
+                        //final container top
                         }.frame(width: 390, height: 390, alignment: .top)
                             .blur(radius: 0)
-                        
-                        
-                
-                        
+                    
 //botton container
                         VStack(alignment: .leading){
-                            
-                            
                             Text("Temporada 1")
                                 .foregroundColor(.white)
                                 .font(.title).bold()
                                 .padding(.top, 10)
+                            
+//scroll card
                             ScrollView(.horizontal, showsIndicators: false){
                                     HStack{
                                         ForEach(0..<6){i in
                                             VStack(alignment: .leading){
-                                                CardView(img: "m3")
+                                                Image("m3").resizable()
+                                                    .frame(width: 230 , height: 140)
                                                 //CardView(img: "m\(i)")
-                                                
-                                                //description card
+
+//description card
                                                 Text("Episódio X")
                                                     .foregroundColor(.white)
                                                 Text("The Beatles foi uma banda musical britanica de rock, formada na cidade de Liverpool em 1960.")
                                                     .foregroundColor(.white)
-                                                
-                                                
                                             }.frame(width: 230 , height: 260, alignment: .top)
                                         }
                                 }
                             }
-                            
-                            
                             
 //large card
                             Text("Explore emocionantes universos fabricados")
                                 .font(.title)
                                 .frame(width: 380,height: 100, alignment: .leading)
                                 .foregroundColor(.white)
-                            
+
                             ZStack(alignment: .leading){
                                 Image("m4")
                                     .resizable()
@@ -178,9 +170,6 @@ struct MovieDetails: View {
                                         }
                                     }.padding(.leading)
                                 }
-                                
-                                
-                                
                             }
                             
                             
@@ -206,20 +195,20 @@ struct MovieDetails: View {
 
 struct MovieDetails_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetails(seriesView: SeriesViewModel())
+        MovieDetails()
     }
 }
 
-
-struct CardView: View{
-    var img = ""
-    var x = 0
-    
-    
-    var body: some View{
-        VStack{
-            Image(img)
-                .resizable().frame(width: 230 , height: 140)
-        }
-    }
-}
+//
+//struct CardView: View{
+//    var img = ""
+//    var x = 0
+//
+//
+//    var body: some View{
+//        VStack{
+//            Image(img)
+//                .resizable().frame(width: 230 , height: 140)
+//        }
+//    }
+//}
