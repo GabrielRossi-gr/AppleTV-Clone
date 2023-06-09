@@ -12,4 +12,5 @@ struct Series: Identifiable {
     let title: String
     let imageName: String
     let genre: [String]
+
 }
