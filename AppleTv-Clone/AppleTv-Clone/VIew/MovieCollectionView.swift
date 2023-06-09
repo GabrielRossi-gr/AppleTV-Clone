@@ -40,11 +40,7 @@ struct MovieCollectionView: View {
                     }
                 }
                 
-                
-                
-                
-                
-                
+ 
                 VStack (alignment: .leading) {
                     Text("Series")
                         .font(.title)
