@@ -102,8 +102,10 @@ struct MovieDetails: View {
                         
                 
                         
-//card container
+//botton container
                         VStack(alignment: .leading){
+                            
+                            
                             Text("Temporada 1")
                                 .foregroundColor(.white)
                                 .font(.title).bold()
@@ -112,7 +114,8 @@ struct MovieDetails: View {
                                     HStack{
                                         ForEach(0..<6){i in
                                             VStack(alignment: .leading){
-                                                CardView(img: "m\(i)")
+                                                CardView(img: "m3")
+                                                //CardView(img: "m\(i)")
                                                 
                                                 //description card
                                                 Text("Episódio X")
@@ -125,23 +128,84 @@ struct MovieDetails: View {
                                         }
                                 }
                             }
-            
+                            
+                            
+                            
+//large card
+                            Text("Explore emocionantes universos fabricados")
+                                .font(.title)
+                                .frame(width: 380,height: 100, alignment: .leading)
+                                .foregroundColor(.white)
+                            
+                            ZStack(alignment: .leading){
+                                Image("m4")
+                                    .resizable()
+                                    .cornerRadius(15)
+                                
+                                // gradiente
+                                Rectangle()
+                                        .fill(
+                                            LinearGradient(
+                                                gradient: Gradient(colors: [Color.clear, Color.black.opacity(1)]),
+                                                startPoint: .center,
+                                                endPoint: .bottom
+                                            )
+                                        )
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.white, lineWidth: 0.2)
+                                
+                                
+                                VStack(alignment: .leading){
+                                    Spacer()
+                                        Text("Titulo")
+                                            .font(.largeTitle)
+                                            .foregroundColor(.white)
+                                            .padding(.leading)
+                                        
+                                        Text("Assista Agora no AppleTV+")
+                                        .padding(.bottom, 10)
+                                            .foregroundColor(.white)
+                                            .padding(.leading)
+                                        
+                                }
+                            }//final large card
+                            .frame(width: 373, height: 500, alignment: .top)
+                            
+                            
+                            
+                            
+//relacionados
+                            VStack(alignment: .leading){
+                                Text("Relacionados")
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    .padding(.leading)
+                                ScrollView(.horizontal){
+                                    HStack{
+                                        ForEach(0..<6){i in
+                                            Image("m\(i)")
+                                                .resizable()
+                                                .frame(width: 170, height: 110)
+                                        }
+                                    }.padding(.leading)
+                                }
+                                
+                                
+                                
+                            }
+                            
+                            
+                            
+                            
+                            
+                            
+                        // all botton container
                         }.padding(.leading)
                         .padding(.bottom, 40)
                             .background(.black)
-                            
-        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                }//vstack
-                .padding(.top, 300)
+
+                }//all scroll container
+                .padding(.top, 220)
             }
             
             
