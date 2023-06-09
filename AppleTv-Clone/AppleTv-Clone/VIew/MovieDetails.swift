@@ -219,7 +219,6 @@ struct MovieDetails_Previews: PreviewProvider {
     static var previews: some View {
         MovieDetails(seriesView: SeriesViewModel())
     }
-    
 }
 
 
@@ -232,10 +231,6 @@ struct CardView: View{
         VStack{
             Image(img)
                 .resizable().frame(width: 230 , height: 140)
-            
-            
         }
-        
-        
     }
 }
