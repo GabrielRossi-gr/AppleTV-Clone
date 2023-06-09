@@ -7,21 +7,12 @@
 
 import SwiftUI
 
-
-
-
-
 struct MovieDetails: View {
     @ObservedObject var seriesView: SeriesViewModel
-    
-    
     var body: some View {
         
         ZStack{
-            
-            
             Image("m3")
-                
                 .resizable()
                 .frame(width: .infinity , height: 800, alignment: .top)
                 .offset(x: -0, y:-35)
@@ -39,8 +30,6 @@ struct MovieDetails: View {
             ScrollView{
                 VStack{//
                     
-                
-                        
                         VStack{
                             Text("NOVOS EPISODEOS ÀS SEXTAS")
                                 .foregroundColor(.white)
